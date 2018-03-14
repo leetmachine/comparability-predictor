@@ -46,6 +46,11 @@
     <None Include="input.txt" />
     <None Include="notes.txt" />
     <None Include="output.txt" />
+    <None Include="Release\Newtonsoft.Json.dll" />
+    <None Include="Release\Newtonsoft.Json.xml" />
+    <None Include="Release\compatability-predictor.exe" />
+    <None Include="Release\input.txt" />
+    <None Include="Release\output.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

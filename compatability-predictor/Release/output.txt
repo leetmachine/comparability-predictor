@@ -1,0 +1,1 @@
+[{"Scores":[2],"ApplicantScore":1.0,"Name":"Keegan","Intelligence":11},{"Scores":[1],"ApplicantScore":0.5,"Name":"Aukai","Intelligence":8},{"Scores":[0],"ApplicantScore":0.0,"Name":"Vic","Intelligence":13},{"Scores":[0],"ApplicantScore":0.0,"Name":"D00d","Intelligence":3}]

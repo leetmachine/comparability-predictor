@@ -11,7 +11,7 @@ namespace compatabilitypredictor
         public static void Main(string[] args)
         {
 
-            string text = File.ReadAllText("../../input.txt");
+            string text = File.ReadAllText("input.txt");
             var js = JsonConvert.DeserializeObject<dynamic>(text);
             var teamInputArray = js.team;
             var applicantsInputArray = js.applicants;
@@ -35,7 +35,7 @@ namespace compatabilitypredictor
             }
 
             var jso = JsonConvert.SerializeObject(scoredApplicants);
-            File.WriteAllText("../../output.txt", jso);
+            File.WriteAllText("output.txt", jso);
 
         }
     }
