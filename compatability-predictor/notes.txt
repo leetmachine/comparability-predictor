@@ -1,0 +1,77 @@
+﻿Determine the compatability of each applicant in the array,
+compared to the team. 
+
+output: a json object of each applicant and their compatability score,
+a value 0 - 1.
+
+
+what makes someone compatable to a team?
+-goodness of fit, improves overall team score:
+    -a person has good fit if they:
+        -have a score within the range(min, max) of the team's attributes.
+        -***No because then the team's max will never increase and get better.
+            -adjusted this in logic by capturing max*1.1
+
+    -a person improves the team if:
+        -they have a score > average && score < max*1.1
+
+    -an applicant is perfectly compatable if:
+        -they have an attribute score = 1.1 * team's max
+            = as/(max*1.1)
+            -this allows for team's to pick up better people, without being so much better they imbalance the team.
+           
+
+
+an applicants overall score is:
+    = the average of their individual attribute scores. 
+
+    
+output:
+-an array of applicants sorted by highest score. 
+
+
+
+Positive and Negative score impact:
+
+1. Applicant's score <= average:
+    cs = (as/average);
+    //yields a value 0 to 1. a person who negatively or has no impact on the team loses attribute points or does not gain.
+
+2. average < Applicant's score:
+    cs = as/(max*1.1) + 1;
+    //yields a value 1 to 2. an applicant improves the team, gain's points. 
+
+3. Applicant's score > max *1.1:
+    cs = (as/ (max * 1.1)) - 1;
+    //yields  a value 0 to 1.
+    //an applicant is too far better than the team and therefore looses points. 
+
+if there are 5 team attributes, each one is equally weighted:
+25, 25, 25, 25 //but cut in half to allow for growth.
+12.5, 12.5, 12.5, 12.5
+
+example cases:
+a team's average is 5, (max score * 1.1) is 10:
+applicant scores 4, less than the average:
+1. 4 < 5:
+    4/5 = .8 = 18*.8 = 14.4
+    4/5 = .8 = 12.5*.8 = 10
+
+applicant scores 5, equal to the average:
+1. 5 = 5:
+    5/5 = 1 = 18*1 = 18
+    5/5 = 1 = 12.5*1 = 12.5
+
+applicant scores greater than the average but less than the team growth-maximum:
+2. 5 < 6 < 10:
+    6/10 = .6 + 1 = 1.6 = 18*1.6 = 28.8
+    6/10 = .6 + 1 = 1.6 = 12.5*1.6 = 20
+
+applicant scores greater than the team growth maximum:
+3. 10 < 14:
+    14/10 = 1.4 - 1 = .4 = 12.5*.4 = 5
+
+    
+
+
+        

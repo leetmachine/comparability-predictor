@@ -1,0 +1,14 @@
+﻿{
+    "team": [
+        {"name": "Michael", "intelligence": 11},
+        {"name": "Will", "intelligence": 8},
+        {"name": "Mike", "intelligence": 5}
+    ],
+    "applicants": 
+    [
+        {"name": "Keegan", "intelligence": 11},
+        {"name": "Aukai", "intelligence": 8},
+        {"name": "Vic", "intelligence": 13},
+        {"name": "D00d", "intelligence": 3}
+    ]
+}
